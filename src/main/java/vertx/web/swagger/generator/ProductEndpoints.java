@@ -103,7 +103,7 @@ final class ProductEndpoints {
                         .operationId("getProductById")
                         .consumes(HttpHeaderValues.APPLICATION_JSON.toString())
                         .produces(HttpHeaderValues.APPLICATION_JSON.toString())
-                        .parameter(new PathParameter().name("id").description("Product id that will be return").required(true).type("long").format("int64"))
+                        .parameter(new PathParameter().name("id").description("Product id that will be return").required(true).type("integer").format("int64"))
                         .response(HttpResponseStatus.OK.code(),
                                 new Response().description("Successful operation").schema(
                                         new RefProperty("Product")))
