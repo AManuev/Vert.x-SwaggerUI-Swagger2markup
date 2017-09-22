@@ -1,0 +1,141 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This editor provide a user interface for product management.",
+    "title" : "Product Editor Application",
+    "termsOfService" : "https://smartbear.com/terms-of-use-on-prem/",
+    "contact" : {
+      "email" : "apiteam@swagger.io"
+    },
+    "license" : {
+      "name" : "© 2017 SmartBear Software. All Rights Reserved.",
+      "url" : "https://smartbear.com"
+    }
+  },
+  "host" : "localhost:8080",
+  "tags" : [ {
+    "name" : "Product",
+    "description" : "The product that present in our shop",
+    "externalDocs" : {
+      "description" : "Sell on Amazon",
+      "url" : "https://services.amazon.com/content/sell-on-amazon.htm/ref=footer_soa?ld=AZFSSOA-dT1"
+    }
+  } ],
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/products" : {
+      "get" : {
+        "tags" : [ "Product" ],
+        "summary" : "Get list of Products",
+        "description" : "Return list of Products that contain an information about Product address and etc.",
+        "operationId" : "getProductListPath",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Product"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Products not found"
+          },
+          "500" : {
+            "description" : "Internal server error"
+          }
+        }
+      }
+    },
+    "/products/{id}" : {
+      "get" : {
+        "tags" : [ "Product" ],
+        "summary" : "Return specific Product",
+        "description" : "Return specific Product by id or nothing if not found.",
+        "operationId" : "getProductById",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Product"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error"
+          }
+        }
+      }
+    },
+    "/products/{id} " : {
+      "put" : {
+        "tags" : [ "Product" ],
+        "summary" : "Add new Product in list of Products",
+        "description" : "Add new Product into database.",
+        "operationId" : "handleAddProduct",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Product that should be added to the DB",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Product"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Product"
+            }
+          },
+          "500" : {
+            "description" : "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Product" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64",
+          "example" : 1120
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "Logitech C922x Pro Stream Webcam"
+        },
+        "description" : {
+          "type" : "string",
+          "example" : "Web Camera specifically designed and optimized for Professional quality video streaming on social gaming and entertainment sites like Twitch and YouTube"
+        },
+        "img_path" : {
+          "type" : "string",
+          "example" : "https://images-na.ssl-images-amazon.com/images/I/81fR76MTvQL._SL1500_.jpg"
+        }
+      },
+      "description" : "The product that can be buy in our shop.",
+      "example" : {
+        "map" : {
+          "id" : 1120,
+          "name" : "Logitech C922x Pro Stream Webcam",
+          "description" : "Web Camera specifically designed and optimized for Professional quality video streaming on social gaming and entertainment sites like Twitch and YouTube",
+          "img_path" : "https://images-na.ssl-images-amazon.com/images/I/81fR76MTvQL._SL1500_.jpg"
+        },
+        "empty" : false
+      }
+    }
+  }
+}

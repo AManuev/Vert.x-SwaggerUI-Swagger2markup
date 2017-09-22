@@ -1,0 +1,34 @@
+= Vert.x + Swagger + swagger2markup
+
+Here you will find example of integration Vert.x + Swagger + swagger2markup.
+
+How it works: As Vert.x use routing and if we don't use any annotation based REST
+frameworks we can follow the next way:
+
+1).OpenAPI2Generator class has main method that generate OpenAPI v2.0 file.
+ProductEndpoints build a description for swagger models. Just build your own
+class.
+
+2) When file is generated just execute:
+= maven clean + compile
+
+The swagger2markup plugin generate well formatted HTML based on
+Open API file that was generated on previous step and copy
+under "webroot" resources into resource folder.
+
+Also i extract some JS and HTML from Swagger UI and set path to
+generated file so you have well formed page with ability to
+execute methods.
+
+When you start your service via SimpleREST main method the
+rout to static resource will be added to routing.
+
+router.route().handler(StaticHandler.create().setCachingEnabled(false).setIndexPage("api2/index.html"));
+
+After start you can check:
+
+localhost:8080/api2/index.html
+
+localhost:8080/doc/index.html
+
+

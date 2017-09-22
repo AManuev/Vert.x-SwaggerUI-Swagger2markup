@@ -1,0 +1,165 @@
+
+[[_paths]]
+== Resources
+
+[[_product_resource]]
+=== Product
+The product that present in our shop
+
+
+[[_getproductlistpath]]
+==== Get list of Products
+....
+GET /products
+....
+
+
+===== Description
+Return list of Products that contain an information about Product address and etc.
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|Successful operation|< <<_product,Product>> > array
+|**404**|Products not found|No Content
+|**500**|Internal server error|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json`
+
+
+[[_getproductbyid]]
+==== Return specific Product
+....
+GET /products/{id}
+....
+
+
+===== Description
+Return specific Product by id or nothing if not found.
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|Successful operation|<<_product,Product>>
+|**500**|Internal server error|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json`
+
+
+===== Example HTTP response
+
+====== Response 200
+[source,json]
+----
+{
+  "map" : {
+    "id" : 1120,
+    "name" : "Logitech C922x Pro Stream Webcam",
+    "description" : "Web Camera specifically designed and optimized for Professional quality video streaming on social gaming and entertainment sites like Twitch and YouTube",
+    "img_path" : "https://images-na.ssl-images-amazon.com/images/I/81fR76MTvQL._SL1500_.jpg"
+  },
+  "empty" : false
+}
+----
+
+
+[[_handleaddproduct]]
+==== Add new Product in list of Products
+....
+PUT /products/{id} 
+....
+
+
+===== Description
+Add new Product into database.
+
+
+===== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Body**|**body** +
+__required__|Product that should be added to the DB|<<_product,Product>>
+|===
+
+
+===== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|Successful operation|<<_product,Product>>
+|**500**|Internal server error|No Content
+|===
+
+
+===== Consumes
+
+* `application/json`
+
+
+===== Produces
+
+* `application/json`
+
+
+===== Example HTTP request
+
+====== Request body
+[source,json]
+----
+{
+  "map" : {
+    "id" : 1120,
+    "name" : "Logitech C922x Pro Stream Webcam",
+    "description" : "Web Camera specifically designed and optimized for Professional quality video streaming on social gaming and entertainment sites like Twitch and YouTube",
+    "img_path" : "https://images-na.ssl-images-amazon.com/images/I/81fR76MTvQL._SL1500_.jpg"
+  },
+  "empty" : false
+}
+----
+
+
+===== Example HTTP response
+
+====== Response 200
+[source,json]
+----
+{
+  "map" : {
+    "id" : 1120,
+    "name" : "Logitech C922x Pro Stream Webcam",
+    "description" : "Web Camera specifically designed and optimized for Professional quality video streaming on social gaming and entertainment sites like Twitch and YouTube",
+    "img_path" : "https://images-na.ssl-images-amazon.com/images/I/81fR76MTvQL._SL1500_.jpg"
+  },
+  "empty" : false
+}
+----
+
+
+

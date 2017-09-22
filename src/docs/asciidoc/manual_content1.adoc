@@ -1,0 +1,12 @@
+== Product Editor
+
+   List of existing product
+   Add new product. Information tab.
+   Provide description for product
+
+=== Key quality attributes
+    Availability
+    Maintainability
+    Usability
+
+

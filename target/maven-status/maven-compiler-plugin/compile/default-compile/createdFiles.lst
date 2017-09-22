@@ -1,0 +1,4 @@
+vertx\web\swagger\util\Runner.class
+vertx\web\swagger\generator\OpenAPI2Generator.class
+vertx\web\swagger\rest\SimpleREST.class
+vertx\web\swagger\generator\ProductEndpoints.class

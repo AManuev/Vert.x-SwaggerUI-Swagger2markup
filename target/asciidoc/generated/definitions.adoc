@@ -1,0 +1,24 @@
+
+[[_definitions]]
+== Definitions
+
+[[_product]]
+=== Product
+The product that can be buy in our shop.
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**description** +
+__optional__|**Example** : `"Web Camera specifically designed and optimized for Professional quality video streaming on social gaming and entertainment sites like Twitch and YouTube"`|string
+|**id** +
+__optional__|**Example** : `1120`|integer(int64)
+|**img_path** +
+__optional__|**Example** : `"https://images-na.ssl-images-amazon.com/images/I/81fR76MTvQL._SL1500_.jpg"`|string
+|**name** +
+__optional__|**Example** : `"Logitech C922x Pro Stream Webcam"`|string
+|===
+
+
+

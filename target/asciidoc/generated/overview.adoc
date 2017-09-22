@@ -1,0 +1,41 @@
+= Product Editor Application
+
+
+[[_overview]]
+== Overview
+This editor provide a user interface for product management.
+
+
+=== Contact information
+[%hardbreaks]
+__Contact Email__ : apiteam@swagger.io
+
+
+=== License information
+[%hardbreaks]
+__License__ : © 2017 SmartBear Software. All Rights Reserved.
+__License URL__ : https://smartbear.com
+__Terms of service__ : https://smartbear.com/terms-of-use-on-prem/
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8080
+
+
+=== Tags
+
+* Product : The product that present in our shop
+
+
+=== Consumes
+
+* `application/json`
+
+
+=== Produces
+
+* `application/json`
+
+
+
